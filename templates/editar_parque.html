@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Editar Parque{% endblock %}
+
+{% block content %}
+
+<h2>Editar Parque: {{ parque.Nombre }}</h2>
+
+<form method="POST" class="formulario">
+
+  <label>Nombre:</label>
+  <input name="nombre" value="{{ parque.Nombre }}" required>
+
+  <label>Localidad:</label>
+  <input name="localidad" value="{{ parque.Localidad }}" required>
+
+  <label>Dirección:</label>
+  <input name="direccion" value="{{ parque.Direccion }}" required>
+
+  <label>Tamaño (m²):</label>
+  <input name="tamano" type="number" value="{{ parque.Tamano_m2 }}" required>
+
+  <label>Tipo:</label>
+  <input name="tipo" value="{{ parque.Tipo }}" required>
+
+  <label>Estado:</label>
+  <input name="estado" value="{{ parque.Estado }}" required>
+
+  <label>Canchas:</label>
+  <input name="canchas" value="{{ parque.Canchas }}" required>
+
+  <label>Juegos:</label>
+  <input name="juegos" value="{{ parque.Juegos }}" required>
+
+  <label>Último mantenimiento:</label>
+  <input name="mantenimiento" type="date" value="{{ parque.Ultimo_mantenimiento }}" required>
+
+  <button class="btn">Actualizar</button>
+</form>
+
+{% endblock %}

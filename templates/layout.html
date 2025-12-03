@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% block title %}MiParque{% endblock %}</title>
+
+  <!-- Leaflet y estilos -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}">
+  
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+  {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+<header class="top-header">
+  <div class="header-titles">
+    <h1 class="title-miparque">Mi Parque</h1>
+    <p class="subtitle">Encuentra parques cerca de ti</p>
+  </div>
+
+  <nav class="header-actions">
+    <a href="/" class="header-btn">🏠 Inicio</a>
+    <a href="/parques" class="header-btn ghost">Lista</a>
+    <a href="/agregar" class="header-btn">➕ Agregar</a>
+  </nav>
+</header>
+
+<main>
+  {% block content %}
+  {% endblock %}
+</main>
+
+<footer>JDC 2025.</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/map.js') }}" defer></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}MiParque · Inicio{% endblock %}
+
+{% block content %}
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <img src="{{ url_for('static', filename='img/Logo_Carga1.png') }}" class="bike-loading">
+  <h3>Cargando tu parque más cercano…</h3>
+</div>
+
+
+
+<!-- MAP WRAPPER (NUEVO REQUERIDO PARA QUE SE VEA EL MAPA) -->
+<div id="map-wrapper">
+    <div id="map"></div>
+</div>
+
+<!-- SIDEBAR -->
+<aside>
+  
+  <!-- BUSCADOR -->
+  <div class="search">
+    <input id="searchInput" placeholder="Buscar por nombre, localidad o barrio">
+    <button class="btn" id="searchBtn">Buscar</button>
+  </div>
+
+  <!-- LISTA DE PARQUES -->
+  <div class="park-list" id="parksContainer"></div>
+
+  <!-- UBICAR PARQUE CERCANO -->
+  <button class="btn mt" id="locateBtn">📍 Ubicar parque cercano</button>
+
+</aside>
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/map.js') }}"></script>
+{% endblock %}
